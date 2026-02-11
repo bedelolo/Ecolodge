@@ -1,0 +1,37 @@
+/* ==========================================
+   CAROUSEL CONTAINER FIX
+   ========================================== */
+
+/* Ensure carousel container doesn't hide navigation */
+.our_room_area {
+    position: relative;
+    overflow: visible !important;
+}
+
+.our_room_area .owl-carousel {
+    position: relative;
+    overflow: visible !important;
+}
+
+.our_room_area .owl-stage-outer {
+    overflow: hidden;
+}
+
+/* Make sure navigation is always on top */
+.owl-room {
+    position: relative;
+}
+
+.owl-room .owl-stage-outer {
+    position: relative;
+    z-index: 1;
+}
+
+/* Additional fixes for carousel navigation visibility */
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 !important;
+}

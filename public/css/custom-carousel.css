@@ -1,0 +1,401 @@
+/* ==========================================
+   CUSTOM CAROUSEL NAVIGATION STYLES
+   ========================================== */
+
+/* Modern Navigation Arrows for Room Carousel */
+.owl-room .owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 100;
+    left: 0;
+    right: 0;
+}
+
+.owl-room .owl-nav button {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 50%;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: all;
+    cursor: pointer;
+    border: 2px solid rgba(218, 165, 32, 0.2);
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+.owl-room .owl-nav button.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.owl-room .owl-nav button:not(.disabled):hover {
+    background: linear-gradient(135deg, #DAA520 0%, #B8860B 100%) !important;
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(218, 165, 32, 0.4);
+    border-color: #DAA520;
+}
+
+.owl-room .owl-nav button span {
+    font-size: 28px;
+    color: #DAA520;
+    transition: all 0.3s ease;
+    line-height: 1;
+    display: block;
+}
+
+.owl-room .owl-nav button:not(.disabled):hover span {
+    color: #fff;
+    transform: scale(1.15);
+}
+
+.owl-room .owl-nav .owl-prev {
+    left: 30px;
+}
+
+.owl-room .owl-nav .owl-next {
+    right: 30px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .owl-room .owl-nav button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .owl-room .owl-nav button span {
+        font-size: 24px;
+    }
+
+    .owl-room .owl-nav .owl-prev {
+        left: 15px;
+    }
+
+    .owl-room .owl-nav .owl-next {
+        right: 15px;
+    }
+}
+
+@media (max-width: 575px) {
+    .owl-room .owl-nav button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .owl-room .owl-nav button span {
+        font-size: 20px;
+    }
+
+    .owl-room .owl-nav .owl-prev {
+        left: 10px;
+    }
+
+    .owl-room .owl-nav .owl-next {
+        right: 10px;
+    }
+}
+
+/* ==========================================
+   BOOKING FORM MODAL STYLES
+   ========================================== */
+
+/* Modal Overlay */
+.booking-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.booking-modal-overlay.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+/* Modal Container */
+.booking-modal {
+    background: #fff;
+    border-radius: 20px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9) translateY(30px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.booking-modal-overlay.active .booking-modal {
+    transform: scale(1) translateY(0);
+}
+
+/* Modal Header */
+.booking-modal-header {
+    background: linear-gradient(135deg, #DAA520 0%, #B8860B 100%);
+    color: #fff;
+    padding: 30px;
+    border-radius: 20px 20px 0 0;
+    position: relative;
+}
+
+.booking-modal-header h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.booking-modal-header .room-price {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+    opacity: 0.95;
+}
+
+.booking-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.booking-modal-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+/* Modal Body */
+.booking-modal-body {
+    padding: 35px;
+}
+
+.booking-modal-body .room-description {
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.booking-modal-body .amenities-list {
+    margin-bottom: 30px;
+}
+
+.booking-modal-body .amenities-list h4 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.booking-modal-body .amenities-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.booking-modal-body .amenities-list li {
+    color: #555;
+    font-size: 14px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.booking-modal-body .amenities-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #DAA520;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Form Styles */
+.booking-modal-form .form-group {
+    margin-bottom: 20px;
+}
+
+.booking-modal-form label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.booking-modal-form .form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: #f9f9f9;
+}
+
+.booking-modal-form .form-control:focus {
+    outline: none;
+    border-color: #DAA520;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(218, 165, 32, 0.1);
+}
+
+.booking-modal-form .form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.booking-modal-form .form-row-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 80px;
+    gap: 15px;
+}
+
+.booking-modal-form .submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #DAA520 0%, #B8860B 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.booking-modal-form .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(218, 165, 32, 0.4);
+}
+
+.booking-modal-form .submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 575px) {
+    .booking-modal {
+        width: 95%;
+        max-height: 95vh;
+    }
+
+    .booking-modal-header {
+        padding: 20px;
+    }
+
+    .booking-modal-header h2 {
+        font-size: 22px;
+    }
+
+    .booking-modal-body {
+        padding: 20px;
+    }
+
+    .booking-modal-form .form-row,
+    .booking-modal-form .form-row-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-modal-body .amenities-list ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Smooth scrollbar for modal */
+.booking-modal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.booking-modal::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.booking-modal::-webkit-scrollbar-thumb {
+    background: #DAA520;
+    border-radius: 10px;
+}
+
+.booking-modal::-webkit-scrollbar-thumb:hover {
+    background: #B8860B;
+}
+
+/* Animation for form inputs */
+.booking-modal-form .form-control {
+    animation: slideInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+.booking-modal-overlay.active .booking-modal-form .form-control {
+    opacity: 1;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger animation for form fields */
+.booking-modal-form .form-group:nth-child(1) .form-control {
+    animation-delay: 0.1s;
+}
+
+.booking-modal-form .form-group:nth-child(2) .form-control {
+    animation-delay: 0.15s;
+}
+
+.booking-modal-form .form-group:nth-child(3) .form-control {
+    animation-delay: 0.2s;
+}
+
+.booking-modal-form .form-group:nth-child(4) .form-control {
+    animation-delay: 0.25s;
+}
+
+.booking-modal-form .form-group:nth-child(5) .form-control {
+    animation-delay: 0.3s;
+}
